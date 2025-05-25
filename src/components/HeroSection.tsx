@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 
@@ -10,12 +9,12 @@ export const HeroSection = () => {
   }, []);
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-screen flex items-center justify-center overflow-visible">
       {/* Animated background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-teal-900/20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(120,119,198,0.1),rgba(255,255,255,0))]" />
       </div>
-      
+
       {/* Floating elements */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(6)].map((_, i) => (
@@ -38,15 +37,16 @@ export const HeroSection = () => {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text text-transparent">
-            Tech Stack
+          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-[1.2] bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text text-transparent"
+              style={{ paddingBottom: '0.3em' }}>
+            Manoj Kumar Samal
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
-            Explore the modern development ecosystem with interactive technology showcases
+            Building modern web experiences with interactive and scalable technologies
           </p>
           <div className="inline-flex items-center gap-4">
             <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-blue-400" />
-            <span className="text-sm uppercase tracking-wider text-gray-400">Developer Portfolio</span>
+            <span className="text-sm uppercase tracking-wider text-gray-400">Full-Stack Developer Portfolio</span>
             <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-purple-400" />
           </div>
         </div>
