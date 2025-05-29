@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import resume from "../../public/Manoj_Resume.pdf"
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +25,7 @@ export const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Basic form validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -174,12 +175,14 @@ export const Contact = () => {
             <p className="text-gray-300 text-sm mb-4">
               I'm available for freelance work and exciting collaborations.
             </p>
-            <Button
-              size="sm"
-              className="bg-transparent border border-blue-400 text-blue-400 hover:bg-blue-400 hover:text-white"
+            <a
+              href={resume}
+              target="_blank"
+              // download="Manoj_Resume.pdf"
+              className=" text-white px-4 py-2 rounded border border-blue-500 hover:bg-blue-500 text-sm transition"
             >
               Download Resume
-            </Button>
+            </a>
           </div>
         </div>
       </div>
