@@ -1,5 +1,12 @@
 import { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import "./TechCube.css";
+import react from "../../public/React.png";
+import mongodb from "../../public/mongodb.png";
+import express from "../../public/express.png";
+import node from "../../public/Node.js.png";
+import tailwind from "../../public/Tailwind CSS.png";
+import github from "../../public/github.png";
 
 export const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,29 +38,50 @@ export const HeroSection = () => {
         ))}
       </div>
 
-      <div className="relative z-10 text-center px-6">
+      {/* Main content */}
+      <div className="relative z-10 flex flex-col md:flex-row items-center justify-center gap-16 px-6">
+        {/* Cube */}
+        <div>
+          <div className="cube-scene">
+            <div className="cube">
+              <img className="face front" src={react} />
+              <img className="face back" src={mongodb} />
+              <img className="face left" src={express} />
+              <img className="face right" src={node} />
+              <img className="face top" src={tailwind} />
+              <img className="face bottom" src={github} />
+            </div>
+          </div>
+        </div>
+
+        {/* Text content */}
         <div
-          className={`transition-all duration-1000 ${
+          className={`transition-all  text-center duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-[1.2] bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text text-transparent"
-              style={{ paddingBottom: '0.3em' }}>
-            Manoj Kumar Samal
+          <h1
+            className="text-5xl md:text-7xl font-bold leading-[1.2] bg-gradient-to-r from-blue-400 via-purple-400 to-teal-400 bg-clip-text text-transparent"
+            style={{ paddingBottom: "0.3em" }}
+          >
+            Hi, I'm Manoj
           </h1>
+          <p className="text-2xl md:text-3xl text-gray-300 mb-3 max-w-2xl mx-auto">A MERN Stack Developer</p>
           <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl mx-auto">
             Building modern web experiences with interactive and scalable technologies
           </p>
           <div className="inline-flex items-center gap-4">
             <div className="w-16 h-0.5 bg-gradient-to-r from-transparent to-blue-400" />
-            <span className="text-sm uppercase tracking-wider text-gray-400">Full-Stack Developer Portfolio</span>
+            <span className="text-sm uppercase tracking-wider text-gray-400">
+              Full-Stack Developer Portfolio
+            </span>
             <div className="w-16 h-0.5 bg-gradient-to-l from-transparent to-purple-400" />
           </div>
         </div>
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="hidden md:block absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ChevronDown className="w-6 h-6 text-gray-400" />
       </div>
     </section>

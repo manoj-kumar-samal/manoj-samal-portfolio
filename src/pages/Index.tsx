@@ -8,6 +8,7 @@ import { useTheme } from "next-themes";
 import {ProjectsSection} from "@/components/ProjectsSection";
 
 
+
 const Index = () => {
   const { theme } = useTheme();
   
